@@ -96,7 +96,7 @@ Public Class FrmMain
 		TxtTitle.Name = "txtTitle"
 		TxtTitle.Size = New Size(209, 20)
 		TxtTitle.TabIndex = 2
-		TxtTitle.Text = ""
+		TxtTitle.Text = vbNullString
 		'
 		'cmdFixTag
 		'
@@ -159,7 +159,7 @@ Public Class FrmMain
 		TxtComment.Name = "txtComment"
 		TxtComment.Size = New Size(209, 20)
 		TxtComment.TabIndex = 14
-		TxtComment.Text = ""
+		TxtComment.Text = vbNullString
 		'
 		'txtYear
 		'
@@ -167,7 +167,7 @@ Public Class FrmMain
 		TxtYear.Name = "txtYear"
 		TxtYear.Size = New Size(33, 20)
 		TxtYear.TabIndex = 10
-		TxtYear.Text = ""
+		TxtYear.Text = vbNullString
 		'
 		'txtAlbum
 		'
@@ -175,7 +175,7 @@ Public Class FrmMain
 		TxtAlbum.Name = "txtAlbum"
 		TxtAlbum.Size = New Size(209, 20)
 		TxtAlbum.TabIndex = 8
-		TxtAlbum.Text = ""
+		TxtAlbum.Text = vbNullString
 		'
 		'txtArtist
 		'
@@ -183,7 +183,7 @@ Public Class FrmMain
 		TxtArtist.Name = "txtArtist"
 		TxtArtist.Size = New Size(209, 20)
 		TxtArtist.TabIndex = 6
-		TxtArtist.Text = ""
+		TxtArtist.Text = vbNullString
 		'
 		'txtTrackNumber
 		'
@@ -191,7 +191,7 @@ Public Class FrmMain
 		TxtTrackNumber.Name = "txtTrackNumber"
 		TxtTrackNumber.Size = New Size(25, 20)
 		TxtTrackNumber.TabIndex = 4
-		TxtTrackNumber.Text = ""
+		TxtTrackNumber.Text = vbNullString
 		'
 		'Label1
 		'
@@ -277,7 +277,7 @@ Public Class FrmMain
 		TxtFileName.Size = New Size(300, 20)
 		TxtFileName.TabIndex = 0
 		TxtFileName.TabStop = False
-		TxtFileName.Text = ""
+		TxtFileName.Text = vbNullString
 		TxtFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
 		TxtFileName.WordWrap = False
 		'
@@ -302,7 +302,7 @@ Public Class FrmMain
 	Private Function FixString(ByVal strUserString As String, Optional ByVal boolFixCase As Boolean = True) As String
 		Dim i, blankCount As Integer
 		Dim myStr As String
-		Dim finaleStr As String = ""
+		Dim finaleStr As String = vbNullString
 
 		For i = 1 To Len(strUserString)
 			' Isolate each character
@@ -333,7 +333,7 @@ Public Class FrmMain
 	' Removes illegal charaters from a file name
 	Private Function FixFileName(ByVal sFName As String) As String
 		Dim i As Integer
-		Dim s As String = ""
+		Dim s As String = vbNullString
 		Dim c As String
 
 		For i = 1 To Len(sFName)
