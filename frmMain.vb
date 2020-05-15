@@ -58,21 +58,21 @@ Public Class FrmMain
 	Friend WithEvents Label5 As Label
 	Friend WithEvents Label6 As Label
 	Friend WithEvents Label7 As Label
-	Friend WithEvents btnWrite As Button
-	Friend WithEvents btnRead As Button
-	Friend WithEvents ofdMain As OpenFileDialog
-	Friend WithEvents cboGenre As ComboBox
-	Friend WithEvents txtFileName As TextBox
+	Friend WithEvents BtnWrite As Button
+	Friend WithEvents BtnRead As Button
+	Friend WithEvents OfdMain As OpenFileDialog
+	Friend WithEvents CboGenre As ComboBox
+	Friend WithEvents TxtFileName As TextBox
 
 	<DebuggerStepThrough()> Private Sub InitializeComponent()
 		Dim resources As Resources.ResourceManager = New Resources.ResourceManager(GetType(FrmMain))
 		TxtTitle = New TextBox()
 		CmdFixTag = New Button()
 		CmdClear = New Button()
-		btnWrite = New Button()
+		BtnWrite = New Button()
 		CmdAbout = New Button()
 		CmdExit = New Button()
-		btnRead = New Button()
+		BtnRead = New Button()
 		TxtComment = New TextBox()
 		TxtYear = New TextBox()
 		TxtAlbum = New TextBox()
@@ -85,9 +85,9 @@ Public Class FrmMain
 		Label5 = New Label()
 		Label6 = New Label()
 		Label7 = New Label()
-		ofdMain = New OpenFileDialog()
-		cboGenre = New ComboBox()
-		txtFileName = New TextBox()
+		OfdMain = New OpenFileDialog()
+		CboGenre = New ComboBox()
+		TxtFileName = New TextBox()
 		SuspendLayout()
 		'
 		'txtTitle
@@ -119,12 +119,12 @@ Public Class FrmMain
 		'
 		'btnWrite
 		'
-		btnWrite.FlatStyle = System.Windows.Forms.FlatStyle.System
-		btnWrite.Location = New Point(88, 212)
-		btnWrite.Name = "btnWrite"
-		btnWrite.Size = New Size(65, 25)
-		btnWrite.TabIndex = 16
-		btnWrite.Text = "&Write"
+		BtnWrite.FlatStyle = System.Windows.Forms.FlatStyle.System
+		BtnWrite.Location = New Point(88, 212)
+		BtnWrite.Name = "btnWrite"
+		BtnWrite.Size = New Size(65, 25)
+		BtnWrite.TabIndex = 16
+		BtnWrite.Text = "&Write"
 		'
 		'cmdAbout
 		'
@@ -146,12 +146,12 @@ Public Class FrmMain
 		'
 		'btnRead
 		'
-		btnRead.FlatStyle = System.Windows.Forms.FlatStyle.System
-		btnRead.Location = New Point(8, 212)
-		btnRead.Name = "btnRead"
-		btnRead.Size = New Size(65, 25)
-		btnRead.TabIndex = 15
-		btnRead.Text = "&Read"
+		BtnRead.FlatStyle = System.Windows.Forms.FlatStyle.System
+		BtnRead.Location = New Point(8, 212)
+		BtnRead.Name = "btnRead"
+		BtnRead.Size = New Size(65, 25)
+		BtnRead.TabIndex = 15
+		BtnRead.Text = "&Read"
 		'
 		'txtComment
 		'
@@ -258,34 +258,34 @@ Public Class FrmMain
 		'
 		'ofdMain
 		'
-		ofdMain.DefaultExt = "mp3"
-		ofdMain.Filter = "MP3 Files (*.mp3)|*.mp3"
+		OfdMain.DefaultExt = "mp3"
+		OfdMain.Filter = "MP3 Files (*.mp3)|*.mp3"
 		'
 		'cboGenre
 		'
-		cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		cboGenre.Location = New Point(100, 156)
-		cboGenre.Name = "cboGenre"
-		cboGenre.Size = New Size(209, 21)
-		cboGenre.TabIndex = 12
+		CboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		CboGenre.Location = New Point(100, 156)
+		CboGenre.Name = "cboGenre"
+		CboGenre.Size = New Size(209, 21)
+		CboGenre.TabIndex = 12
 		'
 		'txtFileName
 		'
-		txtFileName.Location = New Point(8, 8)
-		txtFileName.Name = "txtFileName"
-		txtFileName.ReadOnly = True
-		txtFileName.Size = New Size(300, 20)
-		txtFileName.TabIndex = 0
-		txtFileName.TabStop = False
-		txtFileName.Text = ""
-		txtFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-		txtFileName.WordWrap = False
+		TxtFileName.Location = New Point(8, 8)
+		TxtFileName.Name = "txtFileName"
+		TxtFileName.ReadOnly = True
+		TxtFileName.Size = New Size(300, 20)
+		TxtFileName.TabIndex = 0
+		TxtFileName.TabStop = False
+		TxtFileName.Text = ""
+		TxtFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		TxtFileName.WordWrap = False
 		'
 		'frmMain
 		'
 		AutoScaleBaseSize = New Size(5, 13)
 		ClientSize = New Size(316, 278)
-		Controls.AddRange(New Control() {txtFileName, cboGenre, TxtTitle, CmdFixTag, CmdClear, btnWrite, CmdAbout, CmdExit, btnRead, TxtComment, TxtYear, TxtAlbum, TxtArtist, TxtTrackNumber, Label1, Label2, Label3, Label4, Label5, Label6, Label7})
+		Controls.AddRange(New Control() {TxtFileName, CboGenre, TxtTitle, CmdFixTag, CmdClear, BtnWrite, CmdAbout, CmdExit, BtnRead, TxtComment, TxtYear, TxtAlbum, TxtArtist, TxtTrackNumber, Label1, Label2, Label3, Label4, Label5, Label6, Label7})
 		FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Icon = CType(resources.GetObject("$this.Icon"), Icon)
 		MaximizeBox = False
@@ -376,22 +376,22 @@ Public Class FrmMain
 		TxtArtist.Text = String.Empty
 		TxtAlbum.Text = String.Empty
 		TxtYear.Text = String.Empty
-		cboGenre.Text = "Other"
+		CboGenre.Text = "Other"
 		TxtComment.Text = String.Empty
 	End Sub
 
 	' Reads in all MP3 information
-	Private Sub BtnRead_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnRead.Click
+	Private Sub BtnRead_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnRead.Click
 		Dim id3 As New UltraID3()
 
 		' Get the MP3 file name
-		Dim drOpen As DialogResult = ofdMain.ShowDialog()
+		Dim drOpen As DialogResult = OfdMain.ShowDialog()
 		If drOpen <> DialogResult.OK Then
 			Return
 		End If
 
 		' Read and parse the file
-		id3.Read(ofdMain.FileName)
+		id3.Read(OfdMain.FileName)
 
 		' Save individual fields
 		TxtTrackNumber.Text = CStr(id3.TrackNum)
@@ -399,11 +399,11 @@ Public Class FrmMain
 		TxtArtist.Text = id3.Artist
 		TxtAlbum.Text = id3.Album
 		TxtYear.Text = CStr(id3.Year)
-		cboGenre.Text = id3.Genre
+		CboGenre.Text = id3.Genre
 		TxtComment.Text = id3.Comments
 
 		' Update file name as well
-		txtFileName.Text = Path.GetFileName(id3.FileName)
+		TxtFileName.Text = Path.GetFileName(id3.FileName)
 	End Sub
 
 	' We just populate the genre combo box here
@@ -415,7 +415,7 @@ Public Class FrmMain
 		Do
 			s = GenreInfoCollection.GetGenreName(i)
 			If s = String.Empty Then Exit Do
-			cboGenre.Items.Add(s)
+			CboGenre.Items.Add(s)
 			i += CByte(1)
 		Loop
 
@@ -459,27 +459,27 @@ Public Class FrmMain
 	End Sub
 
 	' Save all information to the MP3 file and also renames it
-	Private Sub BtnWrite_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnWrite.Click
+	Private Sub BtnWrite_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BtnWrite.Click
 		Dim sFN As String
 
-		If ofdMain.FileName = String.Empty Then Exit Sub
+		If OfdMain.FileName = String.Empty Then Exit Sub
 
 		' Build the new file name
-		sFN = Path.GetDirectoryName(ofdMain.FileName) &
+		sFN = Path.GetDirectoryName(OfdMain.FileName) &
 		 Path.DirectorySeparatorChar &
 		 FixFileName(TxtArtist.Text & " - " & TxtAlbum.Text & " - " & TxtTitle.Text) &
-		 Path.GetExtension(ofdMain.FileName)
+		 Path.GetExtension(OfdMain.FileName)
 
 		' Lets rename the file first
 		Try
-			Rename(ofdMain.FileName, sFN)
+			Rename(OfdMain.FileName, sFN)
 		Catch exp As Exception
 			MsgBox(exp.Message, MsgBoxStyle.Critical)
 		End Try
 
 		' Update file name
-		ofdMain.FileName = sFN
-		txtFileName.Text = Path.GetFileName(sFN)
+		OfdMain.FileName = sFN
+		TxtFileName.Text = Path.GetFileName(sFN)
 
 		' Read in first to get the defaults
 		Dim id3 As New UltraID3()
@@ -492,7 +492,7 @@ Public Class FrmMain
 			id3.Artist = TxtArtist.Text
 			id3.Album = TxtAlbum.Text
 			id3.Year = CShort(TxtYear.Text)
-			id3.Genre = cboGenre.Text
+			id3.Genre = CboGenre.Text
 			id3.Comments = TxtComment.Text
 		Catch exp As Exception
 			MsgBox(exp.Message, MsgBoxStyle.Critical)
